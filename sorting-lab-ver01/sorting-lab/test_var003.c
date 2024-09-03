@@ -50,11 +50,20 @@ void COMPUTE_NAME( int m0,
 
   */
  	
+	int size = (int)pow(2,ceil(log2(m0)));
+	float* vals = (float*)malloc(size * sizeof(float));
+	for (int i = 0; i < size; ++i){
+ 	 if (i < size-m0){
+		vals[i] = INT_MIN;
+	 }
+	 else {
+		vals[i] = x[m0+i-size];
+	 }
+ 	}
 	
-
 	bitotify(vals,0,size-1);
 	for (int i = 0; i < m0; ++i){
-		y[i] = x[i];
+		y[i] = vals[i+(size-m0)];
 	}
 	free(vals);
 

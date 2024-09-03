@@ -1,6 +1,8 @@
 /*
-  This is a simple implementation of an unoptimized sort.
+  This is a selection sort algorithm
+  - brycehenderson257@ou.edu
 
+Original author
   - richard.m.veras@ou.edu
 
 */
@@ -58,6 +60,7 @@ void swap(float* a, float* b){
 	*b = temp;
 }
 
+//Finds minimum value in array
 float* findMin(float* vals,int start, int end){
 	float* min = &vals[start];
 	for (int i=start+1; i < end; ++i){
