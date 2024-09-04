@@ -13,14 +13,13 @@
 #define COMPUTE_NAME baseline
 #endif
 
-void merge(float arr[], int l, int m, int r)
-{
+void merge(float arr[], int l, int m, int r) {
     int i, j, k;
     int n1 = m - l + 1;
     int n2 = r - m;
 
-    // Create temp arrays
-    int L[n1], R[n2];
+    // Create temp arrays with correct data type (float)
+    float L[n1], R[n2];
 
     // Copy data to temp arrays L[] and R[]
     for (i = 0; i < n1; i++)
@@ -28,7 +27,7 @@ void merge(float arr[], int l, int m, int r)
     for (j = 0; j < n2; j++)
         R[j] = arr[m + 1 + j];
 
-    // Merge the temp arrays back into arr[l..r
+    // Merge the temp arrays back into arr[l..r]
     i = 0;
     j = 0;
     k = l;
@@ -36,30 +35,28 @@ void merge(float arr[], int l, int m, int r)
         if (L[i] <= R[j]) {
             arr[k] = L[i];
             i++;
-        }
-        else {
+        } else {
             arr[k] = R[j];
             j++;
         }
         k++;
     }
 
-    // Copy the remaining elements of L[],
-    // if there are any
+    // Copy the remaining elements of L[], if there are any
     while (i < n1) {
         arr[k] = L[i];
         i++;
         k++;
     }
 
-    // Copy the remaining elements of R[],
-    // if there are any
+    // Copy the remaining elements of R[], if there are any
     while (j < n2) {
         arr[k] = R[j];
         j++;
         k++;
     }
 }
+
 
 void mergeSort(float arr[], int l, int r)
 {
@@ -105,6 +102,6 @@ void COMPUTE_NAME( int m0,
 
   // merge sort
 
-  mergeSort(y,0,len);
+  mergeSort(y,0,len-1);
 
 }
