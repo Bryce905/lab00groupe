@@ -10,8 +10,9 @@
 #FILE_TST=test_var000.c # modify
 #FILE_TST=test_var001.c
 #FILE_TST=test_var002.c
-FILE_TST=test_var003.c
+#FILE_TST=test_var003.c
 #FILE_TST=test_var004.c
+FILE_TST=test_var005.c
 # ...
 #FILE_TST=test_var999.c
 
