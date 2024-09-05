@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #ifndef COMPUTE_NAME
 #define COMPUTE_NAME baseline
