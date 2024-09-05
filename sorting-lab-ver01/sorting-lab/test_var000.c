@@ -12,43 +12,63 @@
 #ifndef COMPUTE_NAME
 #define COMPUTE_NAME baseline
 #endif
+void copyArray(float *x, float *y, int n);
+void quickSort(float arr[], int lowBound, int highBound);
+void swap(float *a, float *b);
+int partition(float arr[], int lowBound, int highBound);
+// Function to swap two elements
+void swap(float* a, float* b) {
+    float t = *a;
+    *a = *b;
+    *b = t;
+}
 
+//Function to copy arrays more efficiently than a for loop
+void copyArray(float *x, float *y, int n) {
+    float *end = x + n; // Pointer to the end of the array x
+    while (x < end) {
+        *y = *x; // Copy the value pointed by x to the location pointed by y
+        x++;     // Move to the next element in x
+        y++;     // Move to the next element in y
+    }
+}
 
+int partition(float arr[], int lowBound, int highBound){
+
+	//obtain original piv
+	float piv = arr[highBound];
+
+	int temp = lowBound - 1; //This is the right position of pivot
+	//now begin moving elements and changing pivot
+	for (int i = lowBound; i <= highBound - 1; i++){
+		if(arr[i] < piv) {
+			temp++;
+			swap(&arr[temp], &arr[i]);
+		}
+	}
+
+	swap(&arr[temp + 1], &arr[highBound]);
+	return temp + 1;
+
+}
+//Quicksort implementation
+void quickSort(float arr[], int lowBound, int highBound){
+	if (lowBound < highBound) {
+		int partitions = partition(arr, lowBound, highBound);
+		// recursively call to go through entire array
+
+		quickSort(arr, lowBound, partitions -1);
+		quickSort(arr, partitions + 1, highBound);
+	}
+
+}
 void COMPUTE_NAME( int m0,
 		   float *x,
 		   float *y )
 
 {
-  /*
-    NOTE: This is just a copy of the baseline. You need to modify
-    and iterate on this.
-  */
-
-  
-  /* 
-     We need an out-of-place sort (input array != output array)
-     so we will do the slowest but easiest thing to get a working
-     implementation. First we will copy the contents of the input
-     array x into array y, then perform an in-place sort on y.
-
-  */
-
-  // copy the contents of the input array into the output array
-  for( int i0 = 0; i0 < m0; ++i0 )
-    y[i0] = x[i0];
-  
-
-  // perform the absolute worse in-place bubble sort.
-  for( int i0 = 0; i0 < m0; ++i0 )
-    for( int j0 = 0; j0 < m0-1; ++j0 )
-    {
-      if( y[j0] > y[j0+1])
-	{
-	  float z = y[j0];
-	  y[j0]   = y[j0+1];
-	  y[j0+1] = z;
-	}
-
-    }
+	copyArray(x, y, m0);
+	quickSort(y, 0, m0 -1);
 
 }
+
