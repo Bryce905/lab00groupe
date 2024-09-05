@@ -71,7 +71,8 @@ void COMPUTE_NAME( int m0,
 	 }
  	}
 	
-	Args* fargs = (Args*)malloc(sizeof(Args));
+	Args* fargs;
+	//Args* fargs = (Args*)malloc(sizeof(Args));
 	fargs->vals = vals;
 	fargs->start = 0;
 	fargs->end = size-1;
