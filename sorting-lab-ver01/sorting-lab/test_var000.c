@@ -5,7 +5,7 @@
 
 */
 
-
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -67,7 +67,8 @@ void COMPUTE_NAME( int m0,
 		   float *y )
 
 {
-	copyArray(x, y, m0);
+	memcpy(y, x, m0 * sizeof(float));
+	//copyArray(x, y, m0);
 	quickSort(y, 0, m0 -1);
 
 }
