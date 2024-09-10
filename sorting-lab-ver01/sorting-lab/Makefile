@@ -14,6 +14,7 @@
 #FILE_TST=test_var004.c
 #FILE_TST=test_var005.c
 FILE_TST=test_var006.c
+#FILE_TST=test_var007.c
 # ...
 #FILE_TST=test_var999.c
 
@@ -44,7 +45,7 @@ build-timer:
 	gcc -lm  FILE_TST.o timer.o -o ./run_timer.x -lm
 
 dump-asm:
-	gcc $(CFLAGS) -DCOMPUTE_NAME=$(NAME_TST) -S $(FILE_TST)
+	gcc $(CFLAGS) -DCOMPUTE_NAME=$(NAME_TST) -S $(FILE_TST) -lm
 
 
 

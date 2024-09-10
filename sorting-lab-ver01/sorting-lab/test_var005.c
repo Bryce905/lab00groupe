@@ -1,5 +1,5 @@
 /*
-  This is a bitonic sort algorithm that only works for powers of 2
+  This is a bitonic sort with threads
   - brycehenderson257@ou.edu
 
 	Original author
