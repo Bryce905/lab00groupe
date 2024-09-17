@@ -7,6 +7,7 @@
 
 #define INSERTION_SORT_THRESHOLD 32
 
+// Insertion sort for small arrays
 void insertionSort(float arr[], int l, int r) {
     for (int i = l + 1; i <= r; i++) {
         float key = arr[i];
@@ -18,6 +19,7 @@ void insertionSort(float arr[], int l, int r) {
         arr[j + 1] = key;
     }
 }
+
 // Function to swap two elements
 void swap(float* a, float* b) {
     float t = *a;
@@ -43,21 +45,26 @@ int partition(float arr[], int lowBound, int highBound){
 	return temp + 1;
 
 }
-//Quicksort implementation
-void quickSort(float arr[], int lowBound, int highBound){
-	if (lowBound < highBound) {
-		int partitions = partition(arr, lowBound, highBound);
+
+// Optimized QuickSort implementation
+void quickSort(float arr[], int lowBound, int highBound) {
+        while (lowBound < highBound) {
+        if (highBound - lowBound < INSERTION_SORT_THRESHOLD) {
+            insertionSort(arr, lowBound, highBound);
+            break;
+        }
+        int partitions = partition(arr, lowBound, highBound);
 		// recursively call to go through entire array
 		quickSort(arr, lowBound, partitions -1);
 		quickSort(arr, partitions + 1, highBound);
-	}
-
+        }
+    
 }
 
 void COMPUTE_NAME(int m0, float* x, float* y) {
     // Copy the contents of the input array into the output array
     memcpy(y, x, m0 * sizeof(float));
 
-    // Merge sort
-    quickSort(y, 0, m0 -1);
+    // Optimized quick sort
+    quickSort(y, 0, m0 - 1);
 }
