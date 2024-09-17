@@ -13,8 +13,9 @@
 #FILE_TST=test_var003.c
 #FILE_TST=test_var004.c
 #FILE_TST=test_var005.c
-FILE_TST=test_var006.c
+#FILE_TST=test_var006.c
 #FILE_TST=test_var007.c
+FILE_TST=test_var008.c
 # ...
 #FILE_TST=test_var999.c
 
