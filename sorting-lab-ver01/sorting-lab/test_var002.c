@@ -52,11 +52,11 @@ void COMPUTE_NAME( int m0,
  	
 	
 
-	bitotify(vals,0,size-1);
+	//bitotify(vals,0,size-1);
 	for (int i = 0; i < m0; ++i){
 		y[i] = x[i];
 	}
-	free(vals);
+	//free(vals);
 
 
 
