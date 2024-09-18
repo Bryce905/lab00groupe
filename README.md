@@ -20,6 +20,18 @@ Variants
 
 8 - FINAL VARIANT improved version of variant 4
 
+9 - merge baseline
+
+10 - merge with improved memory
+
+11 - merge with insertion
+
+12 - merge with improved copying
+
+13 - quick sort baseline
+
+14 - quick sort with insertion
+
 15 - quick sort 
 
 16 - quick sort without conditionals
