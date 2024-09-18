@@ -7,17 +7,6 @@
 
 #define INSERTION_SORT_THRESHOLD 32
 
-void insertionSort(float arr[], int l, int r) {
-    for (int i = l + 1; i <= r; i++) {
-        float key = arr[i];
-        int j = i - 1;
-        while (j >= l && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
-    }
-}
 // Function to swap two elements
 void swap(float* a, float* b) {
     float t = *a;
