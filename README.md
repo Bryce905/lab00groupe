@@ -19,3 +19,7 @@ Variants
 7 - quick sort  
 
 8 - FINAL VARIANT improved version of variant 4
+
+15 - quick sort 
+
+16 - quick sort without conditionals
