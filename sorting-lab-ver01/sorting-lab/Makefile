@@ -7,12 +7,13 @@
 
 
 # Uncomment the file you want to test
-#FILE_TST=test_var000.c # modify
+#FILE_TST=test_var000_MS.c # modify
 #FILE_TST=test_var001.c
-#FILE_TST=test_var002.c
+#FILE_TST=test_var002_IS.c
 #FILE_TST=test_var003.c
 #FILE_TST=test_var004.c
-FILE_TST=test_var005.c
+#FILE_TST=test_var005_QS.c
+FILE_TST=test_var006.c
 #FILE_TST=dispatch.c
 # ...
 #FILE_TST=test_var999.c
